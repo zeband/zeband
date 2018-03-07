@@ -1,0 +1,112 @@
+ie = int(14)
+en = int(9)
+
+# Intro
+print ('Ireland is currently first. Points for Ireland: '), ie
+print ('England is currently second. Points for England: '), en
+print ('More information at https://www.sixnationsrugby.com/en/matchcentre/index.php')
+
+# Match 1 Ireland Vs Scotland standard game points
+sie1 = int(input ('On the Ireland Vs Scotland match, how many points will Ireland Score? '))
+tie1 = int(input ('On the Ireland Vs Scotland match, how many tries will Ireland Score? '))
+ssc1 = int(input ('On the Ireland Vs Scotland match, how many points will Scotland Score? '))
+tsc1 = int(input ('On the Ireland Vs Scotland match, how many tries will Scotland Score? '))
+if sie1 > ssc1 :
+    ie = ie + 4
+    print ('4 Match points for Ireland for victory over Scotland!')
+if sie1 == ssc1 :
+    ie = ie + 2
+    print ('2 Match points for Ireland for drawing against Scotland!')
+if sie1 < ssc1 :
+    ie = ie + 0
+    print ('No Match points for Ireland for loosing against Scotland!')
+    if ssc1 - sie1 <= 7 :
+        ie = ie + 1
+        print ('Bonus point for Ireland for loosing for a short point diference, 7 or less')
+
+# Match 1 France Vs England standard game points
+sfr1 = int(input ('On the France Vs England match, how many points will France Score? '))
+tfr1 = int(input ('On the France Vs England match, how many tries will France Score? '))
+sen1 = int(input ('On the France Vs England match, how many points will England Score? '))
+ten1 = int(input ('On the France Vs England match, how many tries will England Score? '))
+if sen1 > sfr1 :
+    en = en + 4
+    print ('4 Match points for England for victory over France')
+if sen1 == sfr1 :
+    en = en + 2
+    print ('2 Match points for England for drawing against France')
+if sen1 < sfr1 :
+    en = en + 0
+    print ('No Match points for England for loosing against France!')
+    if ssc1 - sie1 <= 7 :
+        ie = ie + 1
+        print ('Bonus point for England for loosing for a short point diference, 7 or less')
+
+# Match 1 bonus game points
+if tie1 > 3 :
+    ie = ie + 1
+    print ('Bonus point for Ireland for scoring more than 3 tries')
+if tie1 <= 3 :
+    ie = ie + 0
+if ten1 > 3 :
+    en = en + 1
+    print ('Bonus point for England for scoring more than 3 tries')
+if ten1 <= 3 :
+    en = en + 0
+
+# Match 1 Sum up
+print ('March the 11th, Total Points for Ireland: '), ie
+print ('March the 11th, Total Points for England: '), en
+if ie > en :
+    print ('Ireland on the lead before the Twickenham big game!')
+if ie == en :
+    print ('First and second places tied before the Twickenham big game!')
+if ie < en :
+    print ('England on the lead before the Twickenham big game!')
+
+
+# Match 2 England Vs Ireland standard game points
+sen2 = int(input ('On the England Vs Ireland match, how many points will England Score? '))
+ten2 = int(input ('On the England Vs Ireland match, how many tries will England Score? '))
+sie2 = int(input ('On the England Vs Ireland match, how many points will Ireland Score? '))
+tie2 = int(input ('On the England Vs Ireland match, how many tries will Ireland Score? '))
+if sen2 > sie2 :
+    en = en + 4
+    ie = ie + 0
+    print ('4 Match points for England for victory over Ireland')
+    print ('No Match points for Ireland for loosing against England')
+if sen2 < sie2 :
+    ie = ie + 4
+    en = en + 0
+    print ('2 Match points for England for drawing against Ireland')
+    print ('No Match points for England for loosing against Ireland')
+if sie1 == ssc1 :
+    en = en + 2
+    ie = ie + 2
+    print ('2 Match points for England for drawing against Ireland')
+    print ('2 Match points for Ireland for drawing against England')
+if (sie1 > ssc1 and sen2 < sie2):
+    ie = ie + 3
+    print ('3 bonus points for Ireland for winning the 5 matches! (not even sure if this rule makes actual sense, but well...)')
+
+# Match 2 bonus game points
+if tie2 > 3 :
+    ie = ie + 1
+    print ('Bonus point for Ireland for scoring more than 3 tries')
+if tie2 <= 3 :
+    ie = ie + 0
+if ten2 > 3 :
+    en = en + 1
+    print ('Bonus point for England for scoring more than 3 tries')
+if ten2 <= 3 :
+    en = en + 0
+
+# Match 2 Sum up
+print ('March the 17th, Total Points for Ireland: '), ie
+print ('March the 17th, Total Points for England: '), en
+if ie > en :
+    print ('Ireland WINS the NatWest 6 Nations 2018!')
+    if (sie1 > ssc1 and sen2 < sie2):
+        print ('Ireland also wins the triple crown for beating Scotland, Wales and England!')
+if ie < en :
+    print ('England wins the NatWest 6 Nations 2018')
